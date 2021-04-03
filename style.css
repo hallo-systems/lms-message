@@ -1,5 +1,7 @@
-body{
+body {
     position: relative;
+    border-top: 5px solid #58ba0a;
+    margin: 0;
 }
 .container{
     position: absolute;
@@ -10,10 +12,22 @@ body{
     margin: auto;
     width: 400px;
 }
-
+.line{
+    border-bottom: 1px solid #0000007d;
+    padding-bottom: 1rem;
+}
+.coach {
+    margin: 1rem 0;
+}
 .chapter{
     float: left;
 }
-.lessonType{
-    width: 340px;
+.gap{
+    margin: 1rem 0 0;
+}
+.gap-u{
+    padding-bottom: 1rem;
+}
+.student-motivation{
+    margin: 1rem 0 0;
 }

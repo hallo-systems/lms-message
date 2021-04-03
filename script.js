@@ -94,4 +94,13 @@ $('.submit').on('click', function(e){
     
     document.getElementById('result').innerHTML = message;
 })
-
+function onClickCopy() {
+    let pTag = document.getElementById('result');
+    let range = document.createRange();
+    range.selectNodeContents(pTag);
+    let selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    document.execCommand('copy');
+    selection.removeAllRanges();
+}

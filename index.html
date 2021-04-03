@@ -12,18 +12,18 @@
 </head>
 <body>
     <div class="container">
-        <div class="coach">
+        <div class="coach line">
             <label for="coachname">記入者:</label>
             <input id="coachname" type="text" name="coachname" placeholder="蒲焼太郎">
         </div>
-        <div class="lessonType">
-            <label for="todayLesson">通常日か発表日どちらかを選択してください</label>
-            <input type="radio" name="todayLesson" value="normal">通常
-            <input type="radio" name="todayLesson" value="presentation">発表
+        <div class="lessonType line">
+            <label for="todayLesson">通常日か発表日どちらかを選択してください</label><br>
+            <input class="line-b" type="radio" name="todayLesson" value="normal">通常
+            <input class="line-b" type="radio" name="todayLesson" value="presentation">発表
         </div>
         <div id="normalDay" style="display: none;">
             <form>
-            <div class="item">
+            <div class="item" style="padding-top: 1rem;">
                 <label for="studentname">生徒名:</label>
                 <input id="studentname" type="text" name="studentname" placeholder="ハロー太郎">
             </div>
@@ -50,7 +50,7 @@
                     <option value="Create">クリエイトモード</option>
                 </select>
             </div>
-            <div>
+            <div class="line">
                 <select id="mission">
                     <option value="all-s">全てSクリア</option>
                     <option value="a-to-s">AのところをSクリア</option>
@@ -59,49 +59,49 @@
                 </select>
             </div>
             
-            <div>
-                <p>
+            <div class="line">
+                <p class="gap">
                     <label for="comment">コメント</label>  
                 </p>     
                     <textarea name="comment" id="comment" cols="30" rows="5" placeholder="目標に対する達成度とレッスン中の様子を記入してください"></textarea> 
              </div>
-            <div class="student-motivation">
+            <div class="student-motivation line">
                 <label for="motivation">生徒の様子を追加しますか？</label>
                 <input type="radio" name="motivation" value="yes" checked>Yes
-                <input type="radio" name="motivation" value="no">No
+                <input type="radio" name="motivation" value="no">No<br>
                 <div id="motivation-comment">
                     <label for="motivation-description">様子を入力してください</label>
                     <textarea id="motivation-description" cols="30" rows="2" placeholder="例：疲れている様子でしたが頑張って進めてくれました"></textarea>
                 </div>
             </div>
 
-            
-            <div>
+            <div class="line">
+            <div class="gap">
                 <label for="typing">タイピング練習を行いましたか？</label>
                 <input type="radio" name="typing" value="yes" checked>Yes
                 <input type="radio" name="typing" value="no">No
             </div>
 
             <div id="typing-comment" style="display: none;">
-                <label for="typing-comment">成長の様子を入力してください</label>
+                <label for="typing-comment">成長の様子を入力してください</label><br>
                 <textarea id="typing-comment-description" cols="30" rows="5" placeholder="腕試しのタイピングスピードがだんだんと速くなってまいりました。"></textarea>
             </div>
-            <div>
+            </div>
+            <div class="gap line">
                 <label for="homeWork">宿題を入力してください</label>
                 <textarea name="homeWork" id="homeWork" cols="30" rows="2" placeholder="博士の研究所を12まで進めてくる"></textarea>
             </div>
 
-            <div class="btn-area">
+            <div class="btn-area gap gap-u">
                 <label class="label">レッスンレポート</label>
-                <input class="submit" type="button" value="レポートを作成する"><input type="reset" value="リセット">
+                <input class="submit" type="button" value="レポートを作成する"><input type="reset" value="リセット"><input type="button" id="copy" value="コピーする" onclick="onClickCopy();">
             </div>
-
             </form>
         </div>
 
         <div id="presentationDay" style="display: none;">
             <form action="">
-                <div class="item">
+                <div class="item gap">
                     <label for="pstudentname">生徒名:</label>
                     <input id="pstudentname" type="text" name="pstudentname" placeholder="ハロー太郎">
                 </div>
@@ -109,25 +109,26 @@
                     <label for="title">プレゼンテーションタイトル</label>
                     <textarea name="title" id="title" cols="30" rows="1"></textarea>
                 </div>
-                <div class="pComment">
+                <div class="pComment line">
                     <label for="pDescription">プレゼン内容,様子,感想</label>
                     <textarea name="pDescription" id="pDescription" cols="30" rows="10"></textarea>
                 </div>
-                <div>
+                <div class="gap line">
                     <label for="homeWork">宿題を入力してください</label>
                     <textarea name="phomeWork" id="phomeWork" cols="30" rows="2" placeholder="博士の研究所を12まで進めてくる"></textarea>
                 </div>
-                <div class="btn-area">
+                <div class="btn-area gap">
                     <label class="label">レッスンレポート</label>
-                    <input class="submit" type="button" value="レポートを作成する"><input type="reset" value="リセット">
+                    <input class="submit" type="button" value="レポートを作成する"><input type="reset" value="リセット"><input type="button" id="copy" value="コピーする" onclick="onClickCopy();">
                 </div>
             </form>
         </div>
 
         <div>
-            <p id="result"></p>
+            <p id="result" class="gap-u"></p>
         </div>
     </div>
     <script src="./script.js"></script>
+    
 </body>
 </html>
