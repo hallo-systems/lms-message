@@ -4,37 +4,42 @@ const chapters = {
     "Chapter3":"繰り返し","Chapter4":"繰り返し","Chapter8":"繰り返し","Chapter9":"繰り返し","Chapter11":"繰り返し",
     "Chapter5":"イベント処理","Chapter6":"イベント処理","Chapter7":"イベント処理",
     "Chapter13":"変数","Chapter14":"変数","Chapter15":"変数",
-    "Chapter16":"関数","Chapter17":"関数"
+    "Chapter16":"関数","Chapter17":"関数",
+    "アドバンスモード1":"応用プログラミング","アドバンスモード2":"アルゴリズムとデータ構造"
 }
-
-var message = "";
-var yes_no = "";
-var motivation_yes_no = "yes";
-var todayLesson = "";
-
-$('input').click(function(){
-    yes_no = $('input[name="typing"]:checked').val();
-    motivation_yes_no = $('input[name="motivation"]:checked').val();
-    todayLesson = $('input[name="todayLesson"]:checked').val();
-    if (todayLesson == "normal") {
+var todayLessonType = "";
+var TypingYesNo = "";
+$('input[name="todayLesson"]').click(function(){
+    todayLessonType = $('input[name="todayLesson"]:checked').val();
+    if (todayLessonType == "normal") {
         document.getElementById("normalDay").style.display = "inline";
         document.getElementById("presentationDay").style.display = "none";
-    } else {
+    } else if(todayLessonType == "presentation") {
         document.getElementById("presentationDay").style.display = "inline";
         document.getElementById("normalDay").style.display = "none";
     }
-    if (yes_no == "yes"){
+})
+
+$('input[name="typing"]').click(function(){
+    TypingYesNo = $('input[name="typing"]:checked').val();
+    if (TypingYesNo == "yes"){
         document.getElementById("typing-comment").style.display = "inline";
     }else{
         document.getElementById("typing-comment").style.display = "none";
     }
-    if (motivation_yes_no == "no"){
+})
+
+$('input[name="motivation"]').click(function(){
+    var motivation = "yes";
+    motivation = $('input[name="motivation"]:checked').val();    
+    if (motivation == "no"){
         document.getElementById("motivation-comment").style.display = "none";
     }else{
         document.getElementById("motivation-comment").style.display = "inline";
     }
 })
 
+var message = "";
 $('.submit').on('click', function(e){
     e.preventDefault();
     var chapter = $('#chapter').val();
@@ -50,10 +55,10 @@ $('.submit').on('click', function(e){
     var date = new Date();
     var month = date.getMonth()+1;
     var day = date.getDate();
-    var coachName = $('#coachname').val()
+    var coachName = $('#coachname').val();
 
     message = month+"/"+day+"<br>";
-    if (todayLesson == "normal"){
+    if (todayLessonType == "normal"){
         message += "【" + studentName + "さんレッスンレポート】<br>";
         message += "<br>";
         if(chapter=="Create"){
@@ -66,11 +71,11 @@ $('.submit').on('click', function(e){
             message += "本日のレッスン目標は、"+chapter+"を"+mission+"にするでした。<br>";
         }
         message += comment + "<br>";
-        if (motivation_yes_no == "yes") {
+        if (motivation == "yes") {
             message += motivation + "<br>";
         };
         message += "<br>";
-        if (yes_no == "yes"){
+        if (TypingYesNo == "yes"){
             message += "タイピング練習では、"+typing+"<br>";
         };
         message += "自宅学習での目標は「"+homeWork+"」です。<br>";
