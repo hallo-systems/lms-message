@@ -64,11 +64,11 @@ $('.submit').on('click', function(e){
         if(chapter=="Create"){
             message += "本日はクリエイトモードを中心に行いました。<br>";
             message += "<br>";
-            message += "本日のレッスン目標は、「"+mission+"」にするでした。<br>";
+            message += "本日のレッスン目標は、「"+mission+"」でした。<br>";
         }else{
             message += "本日は「"+ chapters[chapter] + "を学ぶ、" + chapter + "」に取り組みました。<br>";
              message += "<br>";
-            message += "本日のレッスン目標は、「"+chapter+"を"+mission+"」にするでした。<br>";
+            message += "本日のレッスン目標は、「"+chapter+"を"+mission+"」でした。<br>";
         }
         message += comment + "<br>";
         if (motivation == "yes") {
