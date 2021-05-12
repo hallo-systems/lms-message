@@ -110,9 +110,6 @@ function onClickCopy() {
     selection.removeAllRanges();
 }
 
-document.getElementById("studentname").onkeypress = (e) => {
-    const key = e.keyCode || e.charCode || 0;
-    if (key == 13) {
-        e.preventDefault();
-    }
+document.getElementById("studentname").onkeypress = function (event) {
+    if (event.key === 'Enter') event.preventDefault();
 }
