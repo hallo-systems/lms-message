@@ -67,7 +67,7 @@ $('.submit').on('click', function(e){
             message += "本日のレッスン目標は、「"+mission+"」でした。<br>";
         }else{
             message += "本日は「"+ chapters[chapter] + "を学ぶ、" + chapter + "」に取り組みました。<br>";
-             message += "<br>";
+            message += "<br>";
             message += "本日のレッスン目標は、「"+chapter+"を"+mission+"」でした。<br>";
         }
         message += comment + "<br>";
@@ -113,6 +113,6 @@ function onClickCopy() {
 document.getElementById("studentname").onkeypress = (e) => {
     const key = e.keyCode || e.charCode || 0;
     if (key == 13) {
-      e.preventDefault();
+        e.preventDefault();
     }
-  }
+}
