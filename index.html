@@ -1,133 +1,134 @@
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="style.css">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <title>レッスンレポート</title>
 </head>
 <body>
-    <div class="container">
-        <div class="coach line">
-            <label for="coachname">記入者:</label>
-            <input id="coachname" type="text" name="coachname" placeholder="蒲焼太郎">
-        </div>
-        <div class="lessonType line">
-            <label for="todayLesson">通常日か発表日どちらかを選択してください</label><br>
-            <input class="line-b" type="radio" name="todayLesson" value="normal">通常
-            <input class="line-b" type="radio" name="todayLesson" value="presentation">発表
-        </div>
-        <div id="normalDay" style="display: none;">
-            <form>
-            <div class="item" style="padding-top: 1rem;">
-                <label for="studentname">生徒名:</label>
-                <input id="studentname" type="text" name="studentname" placeholder="ハロー太郎">
-            </div>
-            <div class="chapter">
-                <select id="chapter">
-                    <option value="Chapter1" selected>チャプター1(博士の研究所)</option>
-                    <option value="Chapter2">チャプター2(お方付けをしよう)</option>
-                    <option value="Chapter3">チャプター3(花を植えよう)</option>
-                    <option value="Chapter4">チャプター4(お使いロボット)</option>
-                    <option value="Chapter5">チャプター5(お菓子屋さんの手伝い)</option>
-                    <option value="Chapter6">チャプター6(にらめっこロボット)</option>
-                    <option value="Chapter7">チャプター7(通信ロボット)</option>
-                    <option value="Chapter8">チャプター8(花を植えよう2)</option>
-                    <option value="Chapter9">チャプター9(タイルデザイナー見習い)</option>
-                    <option value="Chapter10">チャプター10(お菓子屋さんの手伝い2)</option>
-                    <option value="Chapter11">チャプター11(裏山探検)</option>
-                    <option value="Chapter12">チャプター12(発進ロボットカー)</option>
-                    <option value="Chapter13">チャプター13(恐怖の橋渡り)</option>
-                    <option value="Chapter14">チャプター14(カラフルな我が家)</option>
-                    <option value="Chapter15">チャプター15(作文ロボット)</option>
-                    <option value="Chapter16">チャプター16(博士の研究所2)</option>
-                    <option value="Chapter17">チャプター17(料理はお任せ)</option>
-                    <option value="アドバンスモード1">アドバンスモード(応用プログラミング)</option>
-                    <option value="アドバンスモード2">アドバンスモード(アルゴリズム)</option>
-                    <option value="Create">クリエイトモード</option>
-                </select>
-            </div>
-            <div class="line">
-                <select id="mission">
-                    <option value="all-s">全てSクリアする</option>
-                    <option value="a-to-s">AのところをSクリアにする</option>
-                    <option value="stage-to">ステージ「」まで終わらせる</option>
-                    <option value="create">発表会へ向けてクリエイトを創作する</option>
-                    <option value="ChallengeMode">チャレンジモードをクリアする</option>
-                </select>
-            </div>
-            
-            <div class="line">
-                <p class="gap">
-                    <label for="comment">コメント</label>  
-                </p>     
-                    <textarea name="comment" id="comment" cols="30" rows="5" placeholder="目標に対する達成度とレッスン中の様子を記入してください"></textarea> 
-             </div>
-            <div class="student-motivation line">
-                <label for="motivation">生徒の様子を追加しますか？</label>
-                <input type="radio" name="motivation" value="yes" checked>Yes
-                <input type="radio" name="motivation" value="no">No<br>
-                <div id="motivation-comment">
-                    <label for="motivation-description">様子を入力してください</label>
-                    <textarea id="motivation-description" cols="30" rows="2" placeholder="例：疲れている様子でしたが頑張って進めてくれました"></textarea>
+    <div class="container mt-1">
+        <div class="row">
+            <div class="f column col-lg-6 text-right">
+                <div class="overflow-auto">
+                <div class="text-center">
+                    <div class="coach line">
+                        <label for="coachname">記入者:</label>
+                        <input id="coachname" type="text" name="coachname" placeholder="蒲焼太郎">
+                    </div>
+                    <div class="lessonType line">
+                        <label for="todayLesson">通常日か発表日どちらかを選択してください</label><br>
+                        <input class="line-b" type="radio" name="todayLesson" value="normal">通常
+                        <input class="line-b" type="radio" name="todayLesson" value="presentation">発表
+                    </div>
+                </div>
+                <div id="normalDay" style="display: none;">
+                    <form>
+                        <div class="text-center">
+                        <div class="item"style="padding-top: 1rem;">
+                            <label for="studentname">生徒名:</label>
+                            <input id="studentname" type="text" name="studentname" placeholder="ハロー太郎">
+                            <input type="reset" value="リセット">
+                        </div>
+                        <div class="line d-flex">
+                            <div class="chapter">
+                                <select id="chapter" class="w-100">
+                                    <option value="Chapter1" selected>チャプター1(博士の研究所)</option>
+                                    <option value="Chapter2">チャプター2(お方付けをしよう)</option>
+                                    <option value="Chapter3">チャプター3(花を植えよう)</option>
+                                    <option value="Chapter4">チャプター4(お使いロボット)</option>
+                                    <option value="Chapter5">チャプター5(お菓子屋さんの手伝い)</option>
+                                    <option value="Chapter6">チャプター6(にらめっこロボット)</option>
+                                    <option value="Chapter7">チャプター7(通信ロボット)</option>
+                                    <option value="Chapter8">チャプター8(花を植えよう2)</option>
+                                    <option value="Chapter9">チャプター9(タイルデザイナー見習い)</option>
+                                    <option value="Chapter10">チャプター10(お菓子屋さんの手伝い2)</option>
+                                    <option value="Chapter11">チャプター11(裏山探検)</option>
+                                    <option value="Chapter12">チャプター12(発進ロボットカー)</option>
+                                    <option value="Chapter13">チャプター13(恐怖の橋渡り)</option>
+                                    <option value="Chapter14">チャプター14(カラフルな我が家)</option>
+                                    <option value="Chapter15">チャプター15(作文ロボット)</option>
+                                    <option value="Chapter16">チャプター16(博士の研究所2)</option>
+                                    <option value="Chapter17">チャプター17(料理はお任せ)</option>
+                                    <option value="アドバンスモード1">アドバンスモード(応用プログラミング)</option>
+                                    <option value="アドバンスモード2">アドバンスモード(アルゴリズム)</option>
+                                    <option value="Create">クリエイトモード</option>
+                                </select>
+                            </div>
+                            <select id="mission" class="w-auto">
+                                <option value="all-s">全てSクリアする</option>
+                                <option value="a-to-s">AのところをSクリアにする</option>
+                                <option value="stage-to">ステージ「」まで終わらせる</option>
+                                <option value="create">発表会へ向けてクリエイトを創作する</option>
+                                <option value="ChallengeMode">チャレンジモードをクリアする</option>
+                            </select>
+                        </div>
+                        <div class="line">
+                            <p class="gap">
+                                <label for="comment" class="d-block">コメント</label>
+                                <textarea name="comment" id="comment" cols="50" rows="5" placeholder="目標に対する達成度とレッスン中の様子を記入してください"></textarea> 
+                            </p>
+                        </div>
+                        <div class="line">
+                            <div class="gap">
+                                <label for="typing">タイピング練習を行いましたか？</label>
+                                <input type="radio" name="typing" value="yes">Yes
+                                <input type="radio" name="typing" value="no">No
+                            </div>
+                            <div id="typing-comment" style="display: none;">
+                                <label for="typing-comment">成長の様子を入力してください</label><br>
+                                <textarea id="typing-comment-description" cols="50" rows="3" placeholder="腕試しのタイピングスピードがだんだんと速くなってまいりました。"></textarea>
+                            </div>
+                        </div>
+                        <div class="gap line">
+                            <label for="homeWork">宿題を入力してください</label><br>
+                            <textarea name="homeWork" id="homeWork" cols="50" rows="2" placeholder="例：博士の研究所を12まで進めてくる"></textarea>
+                        </div>
+                        <div class="btn-area gap gap-u">
+                            <label class="label">レッスンレポート</label>
+                            <input class="submit" type="button" value="レポートを作成する">
+                        </div>
+                    </div>
+                    </form>
+                </div>
+                <div id="presentationDay" style="display: none;">
+                    <form action="">
+                        <div class="text-center">
+                        <div class="item gap">
+                            <label for="pstudentname">生徒名:</label>
+                            <input id="pstudentname" type="text" name="pstudentname" placeholder="ハロー太郎">
+                            <input type="reset" value="リセット">
+                        </div>
+                        <div class="title">
+                            <textarea name="title" id="title" cols="30" rows="2" placeholder="プレゼンテーションタイトル"></textarea>
+                        </div>
+                        <div class="pComment line">
+                            <textarea name="pDescription" id="pDescription" cols="50" rows="10"  placeholder="プレゼン内容,様子,感想"></textarea>
+                        </div>
+                        <div class="gap line">
+                            <label for="homeWork">宿題を入力してください</label><br>
+                            <textarea name="phomeWork" id="phomeWork" cols="40" rows="2" placeholder="例：博士の研究所を12まで進めてくる"></textarea>
+                        </div>
+                        <div class="btn-area gap">
+                            <label class="label">レッスンレポート</label>
+                            <input class="submit" type="button" value="レポートを作成する">
+                        </div>
+                    </div>
+                    </form>
                 </div>
             </div>
-
-            <div class="line">
-            <div class="gap">
-                <label for="typing">タイピング練習を行いましたか？</label>
-                <input type="radio" name="typing" value="yes">Yes
-                <input type="radio" name="typing" value="no">No
             </div>
-
-            <div id="typing-comment" style="display: none;">
-                <label for="typing-comment">成長の様子を入力してください</label><br>
-                <textarea id="typing-comment-description" cols="30" rows="5" placeholder="腕試しのタイピングスピードがだんだんと速くなってまいりました。"></textarea>
+            <div class="f-r column col-lg-6 sticky-top">
+                <div class="text-center pt-1">
+                    <input type="button" id="copy" class="sticky-top mt-1" value="コピーする" onclick="onClickCopy();">
+                    <p id="result" class="gap-u"></p>
+                </div>
             </div>
-            </div>
-            <div class="gap line">
-                <label for="homeWork">宿題を入力してください</label>
-                <textarea name="homeWork" id="homeWork" cols="30" rows="2" placeholder="博士の研究所を12まで進めてくる"></textarea>
-            </div>
-
-            <div class="btn-area gap gap-u">
-                <label class="label">レッスンレポート</label>
-                <input class="submit" type="button" value="レポートを作成する"><input type="reset" value="リセット"><input type="button" id="copy" value="コピーする" onclick="onClickCopy();">
-            </div>
-            </form>
-        </div>
-
-        <div id="presentationDay" style="display: none;">
-            <form action="">
-                <div class="item gap">
-                    <label for="pstudentname">生徒名:</label>
-                    <input id="pstudentname" type="text" name="pstudentname" placeholder="ハロー太郎">
-                </div>
-                <div class="title">
-                    <label for="title">プレゼンテーションタイトル</label>
-                    <textarea name="title" id="title" cols="30" rows="1"></textarea>
-                </div>
-                <div class="pComment line">
-                    <label for="pDescription">プレゼン内容,様子,感想</label>
-                    <textarea name="pDescription" id="pDescription" cols="30" rows="10"></textarea>
-                </div>
-                <div class="gap line">
-                    <label for="homeWork">宿題を入力してください</label>
-                    <textarea name="phomeWork" id="phomeWork" cols="30" rows="2" placeholder="博士の研究所を12まで進めてくる"></textarea>
-                </div>
-                <div class="btn-area gap">
-                    <label class="label">レッスンレポート</label>
-                    <input class="submit" type="button" value="レポートを作成する"><input type="reset" value="リセット"><input type="button" id="copy" value="コピーする" onclick="onClickCopy();">
-                </div>
-            </form>
-        </div>
-
-        <div>
-            <p id="result" class="gap-u"></p>
         </div>
     </div>
     <footer>v1.1.4</footer>

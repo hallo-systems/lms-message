@@ -109,3 +109,10 @@ function onClickCopy() {
     document.execCommand('copy');
     selection.removeAllRanges();
 }
+
+document.getElementById("studentname").onkeypress = (e) => {
+    const key = e.keyCode || e.charCode || 0;
+    if (key == 13) {
+      e.preventDefault();
+    }
+  }
