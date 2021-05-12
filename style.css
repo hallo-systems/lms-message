@@ -4,13 +4,8 @@ body {
     margin: 0;
 }
 .container{
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    width: 400px;
+    width: 1000px;
+    margin: 1rem auto;
 }
 .line{
     border-bottom: 1px solid #0000007d;
@@ -19,15 +14,44 @@ body {
 .coach {
     margin: 1rem 0;
 }
-.chapter{
-    float: left;
-}
 .gap{
     margin: 1rem 0 0;
 }
 .gap-u{
     padding-bottom: 1rem;
+    margin: 1rem;
 }
 .student-motivation{
     margin: 1rem 0 0;
+}
+.item{
+    margin-bottom: 1rem;
+}
+.title{
+    margin-bottom: 1rem;
+}
+.btn-area {
+    margin: 1rem;
+}
+input.submit {
+    margin: 0 1rem;
+    padding: 0.5rem;
+}
+input[type="reset"] {
+    padding: 0.5rem 3rem;
+}
+input#copy {
+    padding: 0.5rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+.f-r{
+    border: 1px solid #0000007d;
+    height: 90vh;
+    overflow: auto;
+}
+footer{
+    position: absolute;
+    top: 0;
+    left: 0;
 }
