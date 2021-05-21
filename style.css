@@ -50,6 +50,9 @@ input#copy {
     height: 90vh;
     overflow: auto;
 }
+#result{
+    white-space: pre-wrap;
+}
 footer{
     position: absolute;
     top: 0;
