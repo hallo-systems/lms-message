@@ -31,8 +31,8 @@
                     <form>
                         <div class="text-center">
                         <div class="item"style="padding-top: 1rem;">
-                            <label for="studentname">生徒名:</label>
-                            <input id="studentname" type="text" name="studentname" placeholder="ハロー太郎">
+                            <label for="studentName">生徒名:</label>
+                            <input id="studentName" type="text" name="studentName" placeholder="ハロー太郎">
                             <input type="reset" value="リセット">
                         </div>
                         <div class="line d-flex">
@@ -91,34 +91,34 @@
                         </div>
                         <div class="btn-area gap gap-u">
                             <label class="label">レッスンレポート</label>
-                            <input class="submit" type="button" value="レポートを作成する" onclick="">
+                            <input class="submit" type="button" value="レポートを作成する" onclick="submitHandler()">
                         </div>
                     </div>
                     </form>
                 </div>
                 <div id="presentationDay" style="display: none;">
-                    <form action="">
+                    <form>
                         <div class="text-center">
-                        <div class="item gap">
-                            <label for="pstudentname">生徒名:</label>
-                            <input id="pstudentname" type="text" name="pstudentname" placeholder="ハロー太郎">
+                            <div class="item gap">
+                                <label for="pstudentname">生徒名:</label>
+                                <input id="pstudentname" type="text" name="pstudentname" placeholder="ハロー太郎">
+                            </div>
+                            <div class="title">
+                                <textarea name="title" id="title" cols="30" rows="2" placeholder="プレゼンテーションタイトル"></textarea>
+                            </div>
+                            <div class="pComment line">
+                                <textarea name="pDescription" id="pDescription" cols="50" rows="10"  placeholder="プレゼン内容,様子,感想"></textarea>
+                            </div>
+                            <div class="gap line">
+                                <label for="homeWork">宿題を入力してください</label><br>
+                                <textarea name="phomeWork" id="phomeWork" cols="40" rows="2" placeholder="例：博士の研究所を12まで進めてくる"></textarea>
+                            </div>
+                            <div class="btn-area gap">
+                                <label class="label">レッスンレポート</label>
+                                <input class="submit" type="button" value="レポートを作成する" onclick="submitHandler()">
+                                <input type="reset" value="リセット">
+                            </div>
                         </div>
-                        <div class="title">
-                            <textarea name="title" id="title" cols="30" rows="2" placeholder="プレゼンテーションタイトル"></textarea>
-                        </div>
-                        <div class="pComment line">
-                            <textarea name="pDescription" id="pDescription" cols="50" rows="10"  placeholder="プレゼン内容,様子,感想"></textarea>
-                        </div>
-                        <div class="gap line">
-                            <label for="homeWork">宿題を入力してください</label><br>
-                            <textarea name="phomeWork" id="phomeWork" cols="40" rows="2" placeholder="例：博士の研究所を12まで進めてくる"></textarea>
-                        </div>
-                        <div class="btn-area gap">
-                            <label class="label">レッスンレポート</label>
-                            <input class="submit" type="button" value="レポートを作成する">
-                            <input type="reset" value="リセット">
-                        </div>
-                    </div>
                     </form>
                 </div>
             </div>
