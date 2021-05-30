@@ -8,36 +8,25 @@ const chapters = {
     "アドバンスモード1":"応用プログラミング","アドバンスモード2":"アルゴリズムとデータ構造"
 }
 var todayLessonType = "";
-var TypingYesNo = "";
-$('input[name="todayLesson"]').click(function(){
-    todayLessonType = $('input[name="todayLesson"]:checked').val();
-    if (todayLessonType == "normal") {
+var typingType = "";
+function displayHandler(lessonType) {
+    if (lessonType == "normal") {
         document.getElementById("normalDay").style.display = "inline";
         document.getElementById("presentationDay").style.display = "none";
-    } else if(todayLessonType == "presentation") {
+    } else if(lessonType == "presentation") {
         document.getElementById("presentationDay").style.display = "inline";
         document.getElementById("normalDay").style.display = "none";
     }
-})
+}
 
-$('input[name="typing"]').click(function(){
-    TypingYesNo = $('input[name="typing"]:checked').val();
-    if (TypingYesNo == "yes"){
+function typingHandler(typing) {
+    typingType = typing;
+    if (typing == "yes"){
         document.getElementById("typing-comment").style.display = "inline";
     }else{
         document.getElementById("typing-comment").style.display = "none";
     }
-})
-
-$('input[name="motivation"]').click(function(){
-    var motivation = "yes";
-    motivation = $('input[name="motivation"]:checked').val();    
-    if (motivation == "no"){
-        document.getElementById("motivation-comment").style.display = "none";
-    }else{
-        document.getElementById("motivation-comment").style.display = "inline";
-    }
-})
+}
 
 var message = "";
 $('.submit').on('click', function(e){
@@ -79,7 +68,7 @@ $('.submit').on('click', function(e){
             message += "タイピング練習では、"+typing+"<br>";
         };
         message += "自宅学習での目標は「"+homeWork+"」です。<br>";
-    
+
     //presentation
     }else{
         message += "【" + pstudentName + "さんレッスンレポート】<br>";
@@ -96,7 +85,7 @@ $('.submit').on('click', function(e){
     message += "よろしくお願いいたします。<br>";
     message += "<br>";
     message += "記入者：コーチ"+coachName;
-    
+
     document.getElementById('result').innerHTML = message;
 })
 function onClickCopy() {
