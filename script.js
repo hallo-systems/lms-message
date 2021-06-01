@@ -34,12 +34,12 @@ function typingHandler(typing) {
 var message = "";
 function submitHandler() {
     var chapter = document.getElementById("chapter").value;
-    console.log(chapter);
+    var studentName = document.getElementById("studentname").value;
+    var pstudentName = document.getElementById("pstudentname").value;
+
 }
 // $('.submit').on('click', function(e){
 //     e.preventDefault();
-//     var studentName = $('#studentname').val();
-//     var pstudentName = $('#pstudentname').val();
 //     var comment = $('#comment').val();
 //     var homeWork = $('#homeWork').val();
 //     var phomeWork = $('#phomeWork').val();
