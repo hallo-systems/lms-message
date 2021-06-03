@@ -46,7 +46,7 @@ function submitHandler() {
     let date = new Date();
     let day = date.getDate();
     let month = date.getMonth()+1;
-    let coachName = $('#coachname').val();
+    let coachName = document.getElementById("coachname").value;
     message = month+"/"+day+"<br>";
 
     //normalday
