@@ -41,7 +41,7 @@ function submitHandler() {
     let homeWork = document.getElementById("homeWork").value;
     let phomeWork = document.getElementById("phomeWork").value;
     let typing = document.getElementById("typingComentDescription").value;
-    let mission = document.getElementById("mission").text;
+    let mission = document.getElementById("mission").options[document.getElementById("mission").selectedIndex].text;
     let pDescription = document.getElementById("pDescription").value;
     let date = new Date();
     let day = date.getDate();
