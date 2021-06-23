@@ -73,7 +73,7 @@ function submitHandler() {
     }else{
         message += "【" + pstudentName + "さんレッスンレポート】<br>";
         message += "<br>";
-        var pTitle = $('#title').val();
+        var pTitle = document.getElementById("title").value;
         message += "本日は、発表会を行いました<br>"
         message += pstudentName + "さんは、" + "[タイトル：" + pTitle +"]を発表してくれました。<br>"
         message += "<br>"
