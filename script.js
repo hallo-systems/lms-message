@@ -5,59 +5,79 @@ const chapters = {
     "Chapter5":"イベント処理","Chapter6":"イベント処理","Chapter7":"イベント処理",
     "Chapter13":"変数","Chapter14":"変数","Chapter15":"変数",
     "Chapter16":"関数","Chapter17":"関数",
-    "アドバンスモード1":"応用プログラミング","アドバンスモード2":"アルゴリズムとデータ構造"
+    "アドバンスモード1":"応用プログラミング","アドバンスモード2":"アルゴリズムとデータ構造", "アドバンスモード3":"コンピュータ基礎"
 }
+
 var todayLessonType = "";
-var TypingYesNo = "";
-$('input[name="todayLesson"]').click(function(){
-    todayLessonType = $('input[name="todayLesson"]:checked').val();
-    if (todayLessonType == "normal") {
+var typingType = "";
+function displayHandler(lessonType) {
+    todayLessonType = lessonType;
+    if (lessonType == "normal") {
         document.getElementById("normalDay").style.display = "inline";
         document.getElementById("presentationDay").style.display = "none";
-    } else if(todayLessonType == "presentation") {
+    } else if(lessonType == "presentation") {
         document.getElementById("presentationDay").style.display = "inline";
         document.getElementById("normalDay").style.display = "none";
     }
-})
+}
 
-$('input[name="typing"]').click(function(){
-    TypingYesNo = $('input[name="typing"]:checked').val();
-    if (TypingYesNo == "yes"){
+
+function typingHandler(typing) {
+    typingType = typing;
+    if (typing == "yes"){
         document.getElementById("typing-comment").style.display = "inline";
     }else{
         document.getElementById("typing-comment").style.display = "none";
     }
-})
+}
 
-$('input[name="motivation"]').click(function(){
-    var motivation = "yes";
-    motivation = $('input[name="motivation"]:checked').val();    
-    if (motivation == "no"){
-        document.getElementById("motivation-comment").style.display = "none";
-    }else{
-        document.getElementById("motivation-comment").style.display = "inline";
-    }
-})
+
+// let addCount = 0;
+// function insertHandler() {
+//     addCount++;
+//     const item = `
+//     <select name="" id="insert-item-${addCount}">
+//         <option value="">選択してください</option>
+//         <option value="typing">タイピング練習</option>
+//         <option value="mission">ミッションモード</option>
+//         <option value="time-attack">タイムアタック</option>
+//         <option value="challenge">チャレンジモード</option>
+//         <option value="adovance">アドバンスモード</option>
+//         <option value="create">クリエイトモード</option>
+//     </select>`
+//     const text = `<textarea name="comment" id="comment-${addCount}" cols="50" rows="3" placeholder="上記の様子を記入してください"></textarea>`
+//     const insert = document.getElementById("insert-items")
+//     insert.insertAdjacentHTML('beforeend', item);
+//     insert.insertAdjacentHTML('beforeend', text);
+// }
+
 
 var message = "";
-$('.submit').on('click', function(e){
-    e.preventDefault();
-    var chapter = $('#chapter').val();
-    var studentName = $('#studentname').val();
-    var pstudentName = $('#pstudentname').val();
-    var comment = $('#comment').val();
-    var homeWork = $('#homeWork').val();
-    var phomeWork = $('#phomeWork').val();
-    var typing = $('#typing-comment-description').val();
-    var mission = $('#mission option:checked').text();
-    var motivation = $('#motivation-description').val();
-    var pDescription = $('#pDescription').val();
-    var date = new Date();
-    var month = date.getMonth()+1;
-    var day = date.getDate();
-    var coachName = $('#coachname').val();
-
+function submitHandler() {
+    let chapter = document.getElementById("chapter").value;
+    let studentName = document.getElementById("studentName").value;
+    let pstudentName = document.getElementById("pstudentname").value;
+    // let comment = document.getElementById("comment").value;
+    let homeWork = document.getElementById("homeWork").value;
+    let phomeWork = document.getElementById("phomeWork").value;
+    // let typing = document.getElementById("typingComentDescription").value;
+    // ------------------------------------------------------
+    let typing = document.getElementById("typing").value;
+    let timeattack = document.getElementById("time-attack").value;
+    let mission_mode =document.getElementById("mission_mode").value;
+    // ------------------------------------------------------
+    let mission = document.getElementById("mission").options[document.getElementById("mission").selectedIndex].text;
+    // let pDescription = document.getElementById("pDescription").value;
+    let production_content = document.getElementById("production_content").value;
+    let ingenuity = document.getElementById("ingenuity").value;
+    let state_of_announcement = document.getElementById("state_of_announcement").value;    
+    let date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth()+1;
+    let coachName = document.getElementById("coachname").value;
     message = month+"/"+day+"<br>";
+
+    //normalday
     if (todayLessonType == "normal"){
         message += "【" + studentName + "さんレッスンレポート】<br>";
         message += "<br>";
@@ -67,38 +87,39 @@ $('.submit').on('click', function(e){
             message += "本日のレッスン目標は、「"+mission+"」でした。<br>";
         }else{
             message += "本日は「"+ chapters[chapter] + "を学ぶ、" + chapter + "」に取り組みました。<br>";
-             message += "<br>";
+            message += "<br>";
             message += "本日のレッスン目標は、「"+chapter+"を"+mission+"」でした。<br>";
         }
-        message += comment + "<br>";
-        if (motivation == "yes") {
-            message += motivation + "<br>";
-        };
+        message += "<br>" + "---タイピング---" + "<br>" + typing + "<br>";
+        message += "<br>" + "---タイムアタック---" + "<br>" + timeattack + "<br>";
+        message += "<br>" + "---ミッションモード---" + "<br>" + mission_mode + "<br>";
+        // message += "<br>" + comment;
         message += "<br>";
-        if (TypingYesNo == "yes"){
+        if (typingType == "yes"){
             message += "タイピング練習では、"+typing+"<br>";
         };
-        message += "自宅学習での目標は「"+homeWork+"」です。<br>";
-    
+        message += "◇◇自宅学習目標◇◇" + "<br>" + "「" +homeWork+ "」" + "<br>";
+
     //presentation
     }else{
         message += "【" + pstudentName + "さんレッスンレポート】<br>";
         message += "<br>";
-        var pTitle = $('#title').val();
+        var pTitle = document.getElementById("title").value;
         message += "本日は、発表会を行いました<br>"
         message += pstudentName + "さんは、" + "[タイトル：" + pTitle +"]を発表してくれました。<br>"
-        message += "<br>"
-        message += pDescription + "<br>"
-        message += "<br>"
-        message += "自宅学習での目標は「"+phomeWork+"」です。<br>";
+        message += "<br>" + "---作品内容---" + "<br>" + production_content + "<br>"
+        message += "<br>" + "---工夫やこだわり、難しかった点---" + "<br>" +　ingenuity + "<br>"
+        message += "<br>" + "---発表の様子---" + "<br>" +　state_of_announcement + "<br>"
+        message += "<br>" +　"◇◇自宅学習目標◇◇" + "<br>" + "「" +phomeWork+ "」" + "<br>";
     }
     message += "<br>";
     message += "よろしくお願いいたします。<br>";
     message += "<br>";
     message += "記入者：コーチ"+coachName;
-    
+
     document.getElementById('result').innerHTML = message;
-})
+}
+
 function onClickCopy() {
     let pTag = document.getElementById('result');
     let range = document.createRange();
@@ -110,9 +131,6 @@ function onClickCopy() {
     selection.removeAllRanges();
 }
 
-document.getElementById("studentname").onkeypress = (e) => {
-    const key = e.keyCode || e.charCode || 0;
-    if (key == 13) {
-      e.preventDefault();
-    }
-  }
+// document.getElementById("studentname").onkeypress = function (event) {
+//     if (event.key === 'Enter') event.preventDefault();
+// }
