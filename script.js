@@ -21,7 +21,6 @@ function displayHandler(lessonType) {
     }
 }
 
-
 function typingHandler(typing) {
     typingType = typing;
     if (typing == "yes"){
@@ -30,27 +29,6 @@ function typingHandler(typing) {
         document.getElementById("typing-comment").style.display = "none";
     }
 }
-
-
-// let addCount = 0;
-// function insertHandler() {
-//     addCount++;
-//     const item = `
-//     <select name="" id="insert-item-${addCount}">
-//         <option value="">選択してください</option>
-//         <option value="typing">タイピング練習</option>
-//         <option value="mission">ミッションモード</option>
-//         <option value="time-attack">タイムアタック</option>
-//         <option value="challenge">チャレンジモード</option>
-//         <option value="adovance">アドバンスモード</option>
-//         <option value="create">クリエイトモード</option>
-//     </select>`
-//     const text = `<textarea name="comment" id="comment-${addCount}" cols="50" rows="3" placeholder="上記の様子を記入してください"></textarea>`
-//     const insert = document.getElementById("insert-items")
-//     insert.insertAdjacentHTML('beforeend', item);
-//     insert.insertAdjacentHTML('beforeend', text);
-// }
-
 
 var message = "";
 function submitHandler() {
