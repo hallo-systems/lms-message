@@ -29,7 +29,6 @@ function typingHandler(typing) {
         document.getElementById("typing-comment").style.display = "none";
     }
 }
-
 let message = "";
 function submitHandler() {
     const chapter = document.getElementById("chapter").value;
