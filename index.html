@@ -20,9 +20,9 @@
                         <input id="coachname" class="d-block" type="text" name="coachname" placeholder="蒲焼太郎">
                     </div>
                     <div class="lessonType">
-                        <label for="todayLesson">通常日か発表日を選択してください</label><br>
-                        <input class="line-b" type="radio" name="todayLesson" value="normal" onclick="displayHandler(this.value)">通常
-                        <input class="line-b" type="radio" name="todayLesson" value="presentation" onclick="displayHandler(this.value)">発表
+                        <label class="type-choice" for="todayLesson">通常日か発表日を選択してください</label><br>
+                        <input class="line-b radio-style" type="radio" name="todayLesson" value="normal" onclick="displayHandler(this.value)">通常
+                        <input class="line-b radio-style" type="radio" name="todayLesson" value="presentation" onclick="displayHandler(this.value)">発表
                     </div>
                 </div>
                 <div id="normalDay" style="display: none;">
@@ -177,7 +177,7 @@
             </div>
         </div>
     </div>
-    <footer>v1.2.9</footer>
+    <footer>v2.0.0</footer>
     <script src="./script.js"></script>
 
 </body>

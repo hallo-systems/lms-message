@@ -8,8 +8,8 @@ const chapters = {
     "アドバンスモード1":"応用プログラミング","アドバンスモード2":"アルゴリズムとデータ構造", "アドバンスモード3":"コンピュータ基礎"
 }
 
-var todayLessonType = "";
-var typingType = "";
+let todayLessonType = "";
+let typingType = "";
 function displayHandler(lessonType) {
     todayLessonType = lessonType;
     if (lessonType == "normal") {
@@ -21,7 +21,6 @@ function displayHandler(lessonType) {
     }
 }
 
-
 function typingHandler(typing) {
     typingType = typing;
     if (typing == "yes"){
@@ -31,50 +30,24 @@ function typingHandler(typing) {
     }
 }
 
-
-// let addCount = 0;
-// function insertHandler() {
-//     addCount++;
-//     const item = `
-//     <select name="" id="insert-item-${addCount}">
-//         <option value="">選択してください</option>
-//         <option value="typing">タイピング練習</option>
-//         <option value="mission">ミッションモード</option>
-//         <option value="time-attack">タイムアタック</option>
-//         <option value="challenge">チャレンジモード</option>
-//         <option value="adovance">アドバンスモード</option>
-//         <option value="create">クリエイトモード</option>
-//     </select>`
-//     const text = `<textarea name="comment" id="comment-${addCount}" cols="50" rows="3" placeholder="上記の様子を記入してください"></textarea>`
-//     const insert = document.getElementById("insert-items")
-//     insert.insertAdjacentHTML('beforeend', item);
-//     insert.insertAdjacentHTML('beforeend', text);
-// }
-
-
-var message = "";
+let message = "";
 function submitHandler() {
-    let chapter = document.getElementById("chapter").value;
-    let studentName = document.getElementById("studentName").value;
-    let pstudentName = document.getElementById("pstudentname").value;
-    // let comment = document.getElementById("comment").value;
-    let homeWork = document.getElementById("homeWork").value;
-    let phomeWork = document.getElementById("phomeWork").value;
-    // let typing = document.getElementById("typingComentDescription").value;
-    // ------------------------------------------------------
-    let typing = document.getElementById("typing").value;
-    let timeattack = document.getElementById("time-attack").value;
-    let mission_mode =document.getElementById("mission_mode").value;
-    // ------------------------------------------------------
-    let mission = document.getElementById("mission").options[document.getElementById("mission").selectedIndex].text;
-    // let pDescription = document.getElementById("pDescription").value;
-    let production_content = document.getElementById("production_content").value;
-    let ingenuity = document.getElementById("ingenuity").value;
-    let state_of_announcement = document.getElementById("state_of_announcement").value;    
-    let date = new Date();
-    let day = date.getDate();
-    let month = date.getMonth()+1;
-    let coachName = document.getElementById("coachname").value;
+    const chapter = document.getElementById("chapter").value;
+    const studentName = document.getElementById("studentName").value;
+    const pstudentName = document.getElementById("pstudentname").value;
+    const homeWork = document.getElementById("homeWork").value;
+    const phomeWork = document.getElementById("phomeWork").value;
+    const typing = document.getElementById("typing").value;
+    const timeattack = document.getElementById("time-attack").value;
+    const mission_mode =document.getElementById("mission_mode").value;
+    const mission = document.getElementById("mission").options[document.getElementById("mission").selectedIndex].text;
+    const production_content = document.getElementById("production_content").value;
+    const ingenuity = document.getElementById("ingenuity").value;
+    const state_of_announcement = document.getElementById("state_of_announcement").value;    
+    const date = new Date();
+    const day = date.getDate();
+    const month = date.getMonth()+1;
+    const coachName = document.getElementById("coachname").value;
     message = month+"/"+day+"<br>";
 
     //normalday
@@ -93,7 +66,6 @@ function submitHandler() {
         message += "<br>" + "---タイピング---" + "<br>" + typing + "<br>";
         message += "<br>" + "---タイムアタック---" + "<br>" + timeattack + "<br>";
         message += "<br>" + "---ミッションモード---" + "<br>" + mission_mode + "<br>";
-        // message += "<br>" + comment;
         message += "<br>";
         if (typingType == "yes"){
             message += "タイピング練習では、"+typing+"<br>";
@@ -104,7 +76,7 @@ function submitHandler() {
     }else{
         message += "【" + pstudentName + "さんレッスンレポート】<br>";
         message += "<br>";
-        var pTitle = document.getElementById("title").value;
+        let pTitle = document.getElementById("title").value;
         message += "本日は、発表会を行いました<br>"
         message += pstudentName + "さんは、" + "[タイトル：" + pTitle +"]を発表してくれました。<br>"
         message += "<br>" + "---作品内容---" + "<br>" + production_content + "<br>"
@@ -121,16 +93,29 @@ function submitHandler() {
 }
 
 function onClickCopy() {
-    let pTag = document.getElementById('result');
-    let range = document.createRange();
+    const pTag = document.getElementById('result');
+    const range = document.createRange();
     range.selectNodeContents(pTag);
-    let selection = window.getSelection();
+    const selection = window.getSelection();
     selection.removeAllRanges();
     selection.addRange(range);
     document.execCommand('copy');
     selection.removeAllRanges();
 }
 
-// document.getElementById("studentname").onkeypress = function (event) {
-//     if (event.key === 'Enter') event.preventDefault();
-// }
+const $sN = document.getElementById("studentName")
+    $sN.addEventListener('focus',function(e){
+    e.target.onkeypress = function(e){
+      if(e.keyCode===13){
+        return false;
+      }
+    }
+  });
+  const $pN = document.getElementById("pstudentname")
+  $pN.addEventListener('focus',function(e){
+  e.target.onkeypress = function(e){
+    if(e.keyCode===13){
+      return false;
+    }
+  }
+});
