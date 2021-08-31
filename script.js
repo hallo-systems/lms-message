@@ -102,19 +102,21 @@ function onClickCopy() {
     selection.removeAllRanges();
 }
 
-const $sN = document.getElementById("studentName")
-    $sN.addEventListener('focus',function(e){
+const $dontEnter = [
+    document.getElementById("studentName"),
+    document.getElementById("pstudentname")
+]
+
+const dontLength = $dontEnter.length;
+let dontI = 0;
+while(dontI < dontLength){
+    const sN = $dontEnter[dontI]
+    sN.addEventListener('focus',function(e){
     e.target.onkeypress = function(e){
       if(e.keyCode===13){
         return false;
       }
     }
   });
-  const $pN = document.getElementById("pstudentname")
-  $pN.addEventListener('focus',function(e){
-  e.target.onkeypress = function(e){
-    if(e.keyCode===13){
-      return false;
-    }
-  }
-});
+  dontI++;
+};
