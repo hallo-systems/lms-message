@@ -102,15 +102,15 @@ function onClickCopy() {
     selection.removeAllRanges();
 }
 
-const $dontEnter = [
+const dontEnter = [
     document.getElementById("studentName"),
     document.getElementById("pstudentname")
 ]
 
-const dontLength = $dontEnter.length;
+const dontLength = dontEnter.length;
 let dontI = 0;
 while(dontI < dontLength){
-    const sN = $dontEnter[dontI]
+    const sN = dontEnter[dontI]
     sN.addEventListener('focus',function(e){
     e.target.onkeypress = function(e){
       if(e.keyCode===13){
