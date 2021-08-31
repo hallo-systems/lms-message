@@ -7,15 +7,14 @@ body {
     width: 1000px;
     margin: 1rem auto;
 }
+input::placeholder {
+    color: rgba(0, 0, 0, 0.400);
+  }
 .line{
     border-bottom: 1px solid #0000007d;
-    padding-bottom: 1rem;
-}
-.coach {
-    margin: 1rem 0;
 }
 .gap{
-    margin: 1rem 0 0;
+    margin: 1rem 0;
 }
 .gap-u{
     padding-bottom: 1rem;
@@ -28,10 +27,7 @@ body {
     margin-bottom: 1rem;
 }
 .title{
-    margin-bottom: 1rem;
-}
-.btn-area {
-    margin: 1rem;
+    padding-bottom: 1rem
 }
 input.submit {
     margin: 0 1rem;
@@ -39,6 +35,9 @@ input.submit {
 }
 input[type="reset"] {
     padding: 0.5rem 3rem;
+}
+.cha-mis-w{
+    width: 37%;
 }
 input#copy {
     padding: 0.5rem;
@@ -52,6 +51,9 @@ input#copy {
 }
 #result{
     white-space: pre-wrap;
+}
+#result:focus{
+    outline: none;
 }
 footer{
     position: absolute;
