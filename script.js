@@ -5,7 +5,15 @@ const chapters = {
     "Chapter5":"イベント処理","Chapter6":"イベント処理","Chapter7":"イベント処理",
     "Chapter13":"変数","Chapter14":"変数","Chapter15":"変数",
     "Chapter16":"関数","Chapter17":"関数",
-    "アドバンスモード1":"応用プログラミング","アドバンスモード2":"アルゴリズムとデータ構造", "アドバンスモード3":"コンピュータ基礎"
+    "テストの合計点と平均点":"応用プログラミング",
+    "お釣りを求めよう":"応用プログラミング",
+    "三目並べ":"応用プログラミング",
+    "目指せスマートホーム":"応用プログラミング",
+    "3で割り切れる時に笑おう":"アルゴリズムとデータ構造",
+    "最大・最小・交かん":"アルゴリズムとデータ構造",
+    "文字列マスター":"コンピュータ基礎",
+    "ビット演算":"コンピュータ基礎",
+    "そのパスワードは安全？":"ネットワークとセキュリティ",
 }
 
 let todayLessonType = "";
@@ -21,21 +29,14 @@ function displayHandler(lessonType) {
     }
 }
 
-function typingHandler(typing) {
-    typingType = typing;
-    if (typing == "yes"){
-        document.getElementById("typing-comment").style.display = "inline";
-    }else{
-        document.getElementById("typing-comment").style.display = "none";
-    }
-}
 let message = "";
 function submitHandler() {
     const chapter = document.getElementById("chapter").value;
     const studentName = document.getElementById("studentName").value;
     const pstudentName = document.getElementById("pstudentname").value;
-    const homeWork = document.getElementById("homeWork").value;
-    const phomeWork = document.getElementById("phomeWork").value;
+    const homeWork = document.getElementById("chapter02").value;
+    const mission02Val = document.getElementById("mission02").value;
+    const homeWorkContent = document.getElementById("mission02").options[document.getElementById("mission02").selectedIndex].text;
     const typing = document.getElementById("typing").value;
     const timeattack = document.getElementById("time-attack").value;
     const mission_mode =document.getElementById("mission_mode").value;
@@ -48,7 +49,6 @@ function submitHandler() {
     const month = date.getMonth()+1;
     const coachName = document.getElementById("coachname").value;
     message = month+"/"+day+"<br>";
-
     //normalday
     if (todayLessonType == "normal"){
         message += "【" + studentName + "さんレッスンレポート】<br>";
@@ -66,10 +66,11 @@ function submitHandler() {
         message += "<br>" + "---タイムアタック---" + "<br>" + timeattack + "<br>";
         message += "<br>" + "---ミッションモード---" + "<br>" + mission_mode + "<br>";
         message += "<br>";
-        if (typingType == "yes"){
-            message += "タイピング練習では、"+typing+"<br>";
-        };
-        message += "◇◇自宅学習目標◇◇" + "<br>" + "「" +homeWork+ "」" + "<br>";
+        if(homeWork=="クリエイトモード"||mission02Val=="ChallengeMode"){
+            message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+homeWork+"で、"+ homeWorkContent + "」<br>";   
+        }else{
+            message += "◇◇自宅学習目標◇◇" + "<br>" + "「" +homeWork+ "を、"+ homeWorkContent + "」<br>";   
+        }
 
     //presentation
     }else{
@@ -81,13 +82,16 @@ function submitHandler() {
         message += "<br>" + "---作品内容---" + "<br>" + production_content + "<br>"
         message += "<br>" + "---工夫やこだわり、難しかった点---" + "<br>" +　ingenuity + "<br>"
         message += "<br>" + "---発表の様子---" + "<br>" +　state_of_announcement + "<br>"
-        message += "<br>" +　"◇◇自宅学習目標◇◇" + "<br>" + "「" +phomeWork+ "」" + "<br>";
+        if(homeWork=="クリエイトモード"||mission02Val=="ChallengeMode"){
+            message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+homeWork+"で、"+ homeWorkContent + "」<br>";   
+        }else{
+            message += "◇◇自宅学習目標◇◇" + "<br>" + "「" +homeWork+ "を、"+ homeWorkContent + "」<br>";   
+        }
     }
     message += "<br>";
     message += "よろしくお願いいたします。<br>";
     message += "<br>";
     message += "記入者：コーチ"+coachName;
-
     document.getElementById('result').innerHTML = message;
 }
 
