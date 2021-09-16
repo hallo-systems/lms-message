@@ -13,7 +13,7 @@
     <div class="container mt-2">
         <div class="row">
             <div class="f column col-lg-6 text-right">
-                <div class="overflow-auto">
+                <!-- <div class="overflow-auto"> -->
                     <div class="text-center d-flex line align-items-center justify-content-around pb-3">
                         <div class="coach">
                             <label for="coachname">記入者</label>
@@ -40,7 +40,12 @@
                                         <p>目標選択</p>
                                     </div>
                                     <div class="cha-mis-w d-flex">
-                                        <div class="chapter col-12">
+                                        <select id="mode" class="col-6">
+                                            <option value="ブロックモード">ブロック</option>
+                                            <option value="Pythonブロックモード">Pythonブロック</option>
+                                            <option value="テキストコーディングモード">テキストコーディング</option>
+                                        </select>
+                                        <div class="chapter col-8">
                                             <select id="chapter" class="w-100 a">
                                                 <option value="Create">クリエイトモード</option>
                                                 <option value="Chapter1" selected>チャプター1(博士の研究所)</option>
@@ -71,7 +76,7 @@
                                                 <option value="そのパスワードは安全？">ネットワークとセキュリティ(そのパスワードは安全？)</option>
                                             </select>
                                         </div>
-                                        <select id="mission" class="col-12">
+                                        <select id="mission" class="col-10">
                                             <option value="create">発表会へ向けてクリエイトを創作する</option>
                                             <option value="all-s">全てSクリアする</option>
                                             <option value="a-to-s">AのところをSクリアにする</option>
@@ -125,52 +130,63 @@
                                 </div>
                         </form>
                     </div>
+                    <!-- 宿題 -->
                     <div class="gap d-flex align-items-center">
-                        <label for="homeWork" class="col-3">自学習内容</label>
-                        <div class="chapter w-50">
-                            <select id="chapter02" class="w-100">
-                                <option value="Chapter1" selected>チャプター1(博士の研究所)</option>
-                                <option value="Chapter2">チャプター2(お方付けをしよう)</option>
-                                <option value="Chapter3">チャプター3(花を植えよう)</option>
-                                <option value="Chapter4">チャプター4(お使いロボット)</option>
-                                <option value="Chapter5">チャプター5(お菓子屋さんの手伝い)</option>
-                                <option value="Chapter6">チャプター6(にらめっこロボット)</option>
-                                <option value="Chapter7">チャプター7(通信ロボット)</option>
-                                <option value="Chapter8">チャプター8(花を植えよう2)</option>
-                                <option value="Chapter9">チャプター9(タイルデザイナー見習い)</option>
-                                <option value="Chapter10">チャプター10(お菓子屋さんの手伝い2)</option>
-                                <option value="Chapter11">チャプター11(裏山探検)</option>
-                                <option value="Chapter12">チャプター12(発進ロボットカー)</option>
-                                <option value="Chapter13">チャプター13(恐怖の橋渡り)</option>
-                                <option value="Chapter14">チャプター14(カラフルな我が家)</option>
-                                <option value="Chapter15">チャプター15(作文ロボット)</option>
-                                <option value="Chapter16">チャプター16(博士の研究所2)</option>
-                                <option value="Chapter17">チャプター17(料理はお任せ)</option>
-                                <option value="テストの合計点と平均点">応用プログラミング(テストの合計点と平均点)</option>
-                                <option value="お釣りを求めよう">応用プログラミング(お釣りを求めよう)</option>
-                                <option value="三目並べ">応用プログラミング(三目並べ)</option>
-                                <option value="目指せスマートホーム">応用プログラミング(目指せスマートホーム)</option>
-                                <option value="3で割り切れる時に笑おう">アルゴリズムとデータ構造(3で割り切れる時に笑おう)</option>
-                                <option value="最大・最小・交かん">アルゴリズムとデータ構造(最大・最小・交かん)</option>
-                                <option value="文字列マスター">コンピュータ基礎(文字列マスター)</option>
-                                <option value="ビット演算">コンピュータ基礎(ビット演算)</option>
-                                <option value="そのパスワードは安全？">ネットワークとセキュリティ(そのパスワードは安全？)</option>
-                                <option value="クリエイトモード">クリエイトモード</option>
+                        <div class="col-3">
+                            <label for="homeWork">自学習内容</label>
+                        </div>
+                        <div class="cha-mis-w d-flex">
+                            <select id="hwMode" class="col-6">
+                                <option value="ブロックモード">ブロック</option>
+                                <option value="Pythonブロックモード">Pythonブロック</option>
+                                <option value="テキストコーディングモード">テキストコーディング</option>
+                            </select>
+                            <div class="chapter col-8">
+                                <select id="chapter02" class="w-100 a">
+                                    <option value="クリエイトモード"selected>クリエイトモード</option>
+                                    <option value="Chapter1">チャプター1(博士の研究所)</option>
+                                    <option value="Chapter2">チャプター2(お方付けをしよう)</option>
+                                    <option value="Chapter3">チャプター3(花を植えよう)</option>
+                                    <option value="Chapter4">チャプター4(お使いロボット)</option>
+                                    <option value="Chapter5">チャプター5(お菓子屋さんの手伝い)</option>
+                                    <option value="Chapter6">チャプター6(にらめっこロボット)</option>
+                                    <option value="Chapter7">チャプター7(通信ロボット)</option>
+                                    <option value="Chapter8">チャプター8(花を植えよう2)</option>
+                                    <option value="Chapter9">チャプター9(タイルデザイナー見習い)</option>
+                                    <option value="Chapter10">チャプター10(お菓子屋さんの手伝い2)</option>
+                                    <option value="Chapter11">チャプター11(裏山探検)</option>
+                                    <option value="Chapter12">チャプター12(発進ロボットカー)</option>
+                                    <option value="Chapter13">チャプター13(恐怖の橋渡り)</option>
+                                    <option value="Chapter14">チャプター14(カラフルな我が家)</option>
+                                    <option value="Chapter15">チャプター15(作文ロボット)</option>
+                                    <option value="Chapter16">チャプター16(博士の研究所2)</option>
+                                    <option value="Chapter17">チャプター17(料理はお任せ)</option>
+                                    <option value="テストの合計点と平均点">応用プログラミング(テストの合計点と平均点)</option>
+                                    <option value="お釣りを求めよう">応用プログラミング(お釣りを求めよう)</option>
+                                    <option value="三目並べ">応用プログラミング(三目並べ)</option>
+                                    <option value="目指せスマートホーム">応用プログラミング(目指せスマートホーム)</option>
+                                    <option value="3で割り切れる時に笑おう">アルゴリズムとデータ構造(3で割り切れる時に笑おう)</option>
+                                    <option value="最大・最小・交かん">アルゴリズムとデータ構造(最大・最小・交かん)</option>
+                                    <option value="文字列マスター">コンピュータ基礎(文字列マスター)</option>
+                                    <option value="ビット演算">コンピュータ基礎(ビット演算)</option>
+                                    <option value="そのパスワードは安全？">ネットワークとセキュリティ(そのパスワードは安全？)</option>
+                                </select>
+                            </div>
+                            <select id="mission02" class="col-10">
+                                <option value="create">発表会へ向けてクリエイトを創作する</option>
+                                <option value="all-s">全てSクリアする</option>
+                                <option value="a-to-s">AのところをSクリアにする</option>
+                                <option value="stage-to">ステージ「」まで終わらせる</option>
+                                <option value="ChallengeMode">チャレンジモードをクリアする</option>
                             </select>
                         </div>
-                        <select id="mission02" class="w-50">
-                            <option value="Create">発表会へ向けて作品を創作してくる</option>
-                            <option value="all-s">全てSクリアする</option>
-                            <option value="a-to-s">AクリアのステージをSクリアにする</option>
-                            <option value="stage-to">ステージ「」まで終わらせる</option>
-                            <option value="ChallengeMode">チャレンジモードをクリアする</option>
-                        </select>
-                    </div> 
+                    </div>
                     <div class="btn-area gap gap-u">
                         <input class="submit col-12 m-auto" type="button" value="レポートを作成する" onclick="submitHandler()">
                     </div> 
-                </div>
+                <!-- </div> -->
             </div>
+            <!-- 出力画面 -->
             <div class="f-r column col-lg-6 sticky-top">
                 <div class="pt-1">
                     <input type="button" id="copy" class="sticky-top mt-1" value="コピーする" onclick="onClickCopy();">
@@ -179,7 +195,7 @@
             </div>
         </div>
     </div>
-    <footer>v2.1.0</footer>
+    <footer>v2.2.1</footer>
     <script src="./script.js"></script>
 
 </body>

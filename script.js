@@ -37,6 +37,8 @@ function submitHandler() {
     const homeWork = document.getElementById("chapter02").value;
     const mission02Val = document.getElementById("mission02").value;
     const homeWorkContent = document.getElementById("mission02").options[document.getElementById("mission02").selectedIndex].text;
+    const mode = document.getElementById("mode").value;
+    const hwMode = document.getElementById("hwMode").value;
     const typing = document.getElementById("typing").value;
     const timeattack = document.getElementById("time-attack").value;
     const mission_mode =document.getElementById("mission_mode").value;
@@ -60,16 +62,19 @@ function submitHandler() {
         }else{
             message += "本日は「"+ chapters[chapter] + "を学ぶ、" + chapter + "」に取り組みました。<br>";
             message += "<br>";
-            message += "本日のレッスン目標は、「"+chapter+"を"+mission+"」でした。<br>";
+            message += "本日のレッスン目標は、「"+mode+"の"+chapter+"を"+mission+"」でした。<br>";
         }
         message += "<br>" + "---タイピング---" + "<br>" + typing + "<br>";
         message += "<br>" + "---タイムアタック---" + "<br>" + timeattack + "<br>";
         message += "<br>" + "---ミッションモード---" + "<br>" + mission_mode + "<br>";
         message += "<br>";
-        if(homeWork=="クリエイトモード"||mission02Val=="ChallengeMode"){
+        if(homeWork=="クリエイトモード"){
             message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+homeWork+"で、"+ homeWorkContent + "」<br>";   
-        }else{
-            message += "◇◇自宅学習目標◇◇" + "<br>" + "「" +homeWork+ "を、"+ homeWorkContent + "」<br>";   
+        }else if (mission02Val=="ChallengeMode"){
+            message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+hwMode+ "の" +homeWork+"で、"+ homeWorkContent + "」<br>";   
+        }
+        else{
+            message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+hwMode+ "の" +homeWork+ "を、"+ homeWorkContent + "」<br>";   
         }
 
     //presentation
@@ -82,10 +87,13 @@ function submitHandler() {
         message += "<br>" + "---作品内容---" + "<br>" + production_content + "<br>"
         message += "<br>" + "---工夫やこだわり、難しかった点---" + "<br>" +　ingenuity + "<br>"
         message += "<br>" + "---発表の様子---" + "<br>" +　state_of_announcement + "<br>"
-        if(homeWork=="クリエイトモード"||mission02Val=="ChallengeMode"){
+        if(homeWork=="クリエイトモード"){
             message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+homeWork+"で、"+ homeWorkContent + "」<br>";   
-        }else{
-            message += "◇◇自宅学習目標◇◇" + "<br>" + "「" +homeWork+ "を、"+ homeWorkContent + "」<br>";   
+        }else if (mission02Val=="ChallengeMode"){
+            message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+hwMode+ "の" +homeWork+"で、"+ homeWorkContent + "」<br>";   
+        }
+        else{
+            message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+hwMode+ "の" +homeWork+ "を、"+ homeWorkContent + "」<br>";   
         }
     }
     message += "<br>";
@@ -95,6 +103,32 @@ function submitHandler() {
     document.getElementById('result').innerHTML = message;
 }
 
+// ----------------------------------------------------------------------
+// let input = document.createElement('input');
+// input.setAttribute('type', 'checkbox');
+// input.setAttribute('id', 'kuro');
+// input.setAttribute('name', 'kuro');
+// input.setAttribute('value', '1');
+// let label = document.createElement('label');
+// label.htmlFor = 'kuro';
+// label.appendChild(document.createTextNode('ブロック'));
+// let divNode = document.getElementById("selectMode")
+// divNode.appendChild(input);
+// divNode.appendChild(label);
+
+// let input2 = document.createElement('input');
+// input2.setAttribute('type', 'checkbox');
+// input2.setAttribute('id', 'b');
+// input2.setAttribute('name', 'b');
+// input2.setAttribute('value', '2');
+// let label2 = document.createElement('label');
+// label2.htmlFor = 'b';
+// label2.appendChild(document.createTextNode('Pythonブロック'));
+// let divNode2 = document.getElementById("selectMode")
+// divNode2.appendChild(input2);
+// divNode2.appendChild(label2);
+// ----------------------------------------------------------------------
+
 function onClickCopy() {
     const pTag = document.getElementById('result');
     const range = document.createRange();
@@ -102,7 +136,8 @@ function onClickCopy() {
     const selection = window.getSelection();
     selection.removeAllRanges();
     selection.addRange(range);
-    document.execCommand('copy');
+    const clipboardText = selection;
+    navigator.clipboard.writeText(clipboardText);
     selection.removeAllRanges();
 }
 
