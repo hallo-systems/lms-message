@@ -1,0 +1,153 @@
+-
+    const chapters = {
+        "Create" : "クリエイトモード",
+        "Chapter1": "チャプター1(博士の研究所)",
+        "Chapter2": "チャプター2(お片付けをしよう)",
+        "Chapter3": "チャプター3(花を植えよう)",
+        "Chapter4": "チャプター4(お使いロボット)",
+        "Chapter5": "チャプター5(お菓子屋さんの手伝い)",
+        "Chapter6": "チャプター6(にらめっこロボット)",
+        "Chapter7": "チャプター7(通信ロボット)",
+        "Chapter8": "チャプター8(花を植えよう2)",
+        "Chapter9": "チャプター9(タイルデザイナー見習い)",
+        "Chapter10": "チャプター10(お菓子屋さんの手伝い2)",
+        "Chapter11": "チャプター11(裏山探検)",
+        "Chapter12": "チャプター12(発進ロボットカー)",
+        "Chapter13": "チャプター13(恐怖の橋渡り)",
+        "Chapter14": "チャプター14(カラフルの我が家)",
+        "Chapter15": "チャプター15(作文ロボット)",
+        "Chapter16": "チャプター16(博士の研究所2)",
+        "Chapter17": "チャプター17(料理はお任せ)",
+        "テストの合計点と平均点": "応用プログラミング(テストの合計点と平均点)",
+        "お釣りを求めよう": "応用プログラミング(お釣りを求めよう)",
+        "三目並べ": "応用プログラミング(三目並べ)",
+        "目指せスマートホーム": "応用プログラミング(目指せスマートホーム)",
+        "3で割り切れる時に笑おう": "アルゴリズムとデータ構造(3で割り切れる時に笑おう)",
+        "最大・最小・交かん": "アルゴリズムとデータ構造(最大・最小・交かん)",
+        "文字列マスター": "コンピュータ基礎(文字列マスター)",
+        "ビット演算": "コンピュータ基礎(ビット演算)",
+        "そのパスワードは安全？": "ネットワークとセキュリティ(そのパスワードは安全？)",
+    }
+-
+    const mode = {
+        "ブロックモード": "ブロック",
+        "Pythonブロックモード": "Pythonブロック",
+        "テキストコーディングモード": "テキストコーディング",
+    }
+-
+    const mission = {
+        "create": "発表会へ向けてクリエイトを創作する",
+        "all-to-s": "全てSクリアにする",
+        "stage-to": "ステージを「」まで終わらせる",
+        "ChallengeMode": "チャレンジモードをクリアする",
+    }
+
+mixin dayType(type)
+    case type
+        when "normal"
+            #normalDay(style="display: none;")
+                form
+                    .item(style="padding-top: 1rem;")
+                        .d-flex.align-items-center
+                            label.col-3(for="studentName") 生徒名
+                            .ml-auto
+                                input#studentName(type="text", name="studentName",placeholder="ハロー太郎")
+                                input(type="reset",value="リセット")
+                        .line.d-flex.mt-3.align-items-baseline
+                            .col-3.mt-auto
+                                p 目標選択
+                            .cha-mis-w.d-flex
+                                select#mode.col-6
+                                    each val, key in mode
+                                        option(value=key)=val
+                                .chapter.col-8
+                                    select#chapter.w-100.a
+                                        each val, key in chapters
+                                            option(value=key)=val
+                                select#mission.col-10
+                                    each val, key in mission
+                                        option(value=key)=val
+                        .line.gap.d-flex.aalign-items-center.pb-3
+                            label.col-3(for="typing") タイピング
+                            textarea#typing(name="typing", cols="45", rows="3", placeholder="例：基礎練習内のとっくんに挑戦し、一度目の挑戦ではミスが多くＳクリアすることはできませんでしたが、自ら再度挑戦し、見事Ｓクリアを達成することができました。")
+                        .line.gap.d-flex.aalign-items-center.pb-3
+                            label.col-3(for="time-attack") タイムアタック
+                            textarea#time-attack(name="time-attack", cols="45", rows="3", placeholder="例：お片付けをしようのステージに挑戦しました。\n順調に問題を解いていき、前回と同じランクで悔しそうにしていましたが、より高い得点を出すことができました。")
+                        .line.gap.d-flex.aalign-items-center.pb-3
+                            label.col-3(for="challenge") ミッション
+                            textarea#mission_mode(name="mission_mode", cols="45", rows="3", placeholder="例：作文ロボットに挑戦し、全てのステージをＳクリアすることができました。文字を逆さにするプログラムで苦戦する場面もありましたが、コーチングを下に自身でプログラムを組み、クリアすることが出来ました。素晴らしいです！")
+        when "presen"
+            #presentationDay(style="display: none;")
+                form
+                    .item.gap
+                        label.col-3(for="pstudentname") 生徒名
+                        input#pstudentname(type="text", name="pstudentname",placeholder="ハロー太郎")
+                        input(type="reset",value="リセット")
+                    .title.d-flex.align-items-center.line
+                        label.col-3(for="title") タイトル
+                        textarea#title(name="title", cols="45", rows="1", placeholder="プレゼンテーションタイトル")
+                    .production_content.line
+                        p.gap.d-flex.align-items-center
+                            label.col-3(for="production_content") 作品内容
+                            textarea#production_content(name="production_content", cols="45", rows="3", placeholder="例：今回はステージを観賞する作品となっており、クエストで手に入れた新しいオブジェクトのちょうちんや、タイル、まな板などを使い、お祭りの屋台を作っていました。")
+                    .ingenuity.line
+                        p.gap.d-flex.align-items-center
+                            label.col-3(for="ingenuity")
+                                | 工夫
+                                br
+                                |こだわり、
+                                br
+                                | 難しかった点
+                            textarea#ingenuity(name="ingenuity", cols="45", rows="3", placeholder="例：こだわった点として、ちょうちんやタイルの色を意識し、同じ色が連続しないようにプログラミングしたところを挙げてくれました。")
+                    .state_of_announcement.line
+                        p.gap.d-flex.align-items-center
+                            label.col-3(for="state_of_announcement") 発表の様子
+                            textarea#state_of_announcement(name="state_of_announcement", cols="45", rows="3", placeholder="例：例：発表会にも慣れてきたようで、特に緊張する様子もなく楽しそうに発表していました。授業前に、早く発表がしたいと意欲的な様子も見せてくれました。")
+doctype html
+html(lang="ja")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1", crossorigin="anonymous")
+        link(rel="stylesheet", href="style.css")
+        title レッスンレポート
+    body
+        .container.mt-2
+             .row
+                .f.column.col-lg-6.text-right
+                    .text-center.d-flex.line.align-items-center.justify-content-around.pb-3
+                        .coach
+                            label(for="coachname") 記入者
+                            input.d-block#coachname(type="text", name="coachname", placeholder="蒲焼太郎")
+                        .lessonType
+                            label.type-choice(for="todayLesson") 通常日か発表日を選択してください
+                            br
+                            input.line-b.radio-style(type="radio", name="todayLesson" value="normal" onclick="displayHandler(this.value)")
+                            | 通常
+                            input.line-b.radio-style(type="radio", name="todayLesson" value="presentation" onclick="displayHandler(this.value)")
+                            | 発表
+                    +dayType("normal")
+                    +dayType("presen")
+                    .gap.d-flex.align-items-center
+                        .col-3
+                            label(for="homeWork") 自学習内容
+                        .cha-mis-w.d-flex
+                            select#hwMode.col-6
+                                each val, key in mode
+                                    option(value=key)=val
+                            .chapter.col-8
+                                select#chapter02.w-100.a
+                                    each val, key in chapters
+                                        option(value=key)=val
+                            select#mission02.col-10
+                                each val, key in mission
+                                    option(value=key)=val
+                    .btn-area.gap.gap-u
+                        input.submit.col-12.m-auto(type="button", value="レッスンレポートを作成する", onclick="submitHandler()")
+                .f-r.column.col-lg-6.sticky-top
+                    .pt-1
+                        input#copy.sticky-top.mt-1(type="button", value="コピーする", onclick="onClickCopy()")
+                        p#result.gap-u(contentditable="true")
+        footer v2.2.2
+        script(src="./script.js")
