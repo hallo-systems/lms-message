@@ -4,16 +4,18 @@ const chapters = {
     "Chapter3":"繰り返し","Chapter4":"繰り返し","Chapter8":"繰り返し","Chapter9":"繰り返し","Chapter11":"繰り返し",
     "Chapter5":"イベント処理","Chapter6":"イベント処理","Chapter7":"イベント処理",
     "Chapter13":"変数","Chapter14":"変数","Chapter15":"変数",
-    "Chapter16":"関数","Chapter17":"関数",
+    "Chapter16":"関数","Chapter17":"関数", "Chapter18": "変数", "Chapter19":"関数",
     "テストの合計点と平均点":"応用プログラミング",
     "お釣りを求めよう":"応用プログラミング",
     "三目並べ":"応用プログラミング",
     "目指せスマートホーム":"応用プログラミング",
+    "くじ引きロボット": "応用プログラミング",
     "3で割り切れる時に笑おう":"アルゴリズムとデータ構造",
     "最大・最小・交かん":"アルゴリズムとデータ構造",
     "文字列マスター":"コンピュータ基礎",
     "ビット演算":"コンピュータ基礎",
     "そのパスワードは安全？":"ネットワークとセキュリティ",
+    "暗号化・復号": "ネットワークとセキュリティ",
 }
 
 let todayLessonType = "";
@@ -45,7 +47,7 @@ function submitHandler() {
     const mission = document.getElementById("mission").options[document.getElementById("mission").selectedIndex].text;
     const production_content = document.getElementById("production_content").value;
     const ingenuity = document.getElementById("ingenuity").value;
-    const state_of_announcement = document.getElementById("state_of_announcement").value;    
+    const state_of_announcement = document.getElementById("state_of_announcement").value;
     const date = new Date();
     const day = date.getDate();
     const month = date.getMonth()+1;
@@ -69,12 +71,12 @@ function submitHandler() {
         message += "<br>" + "---ミッションモード---" + "<br>" + mission_mode + "<br>";
         message += "<br>";
         if(homeWork=="クリエイトモード"){
-            message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+homeWork+"で、"+ homeWorkContent + "」<br>";   
+            message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+homeWork+"で、"+ "発表会へ向けてクリエイトを創作する" + "」<br>";
         }else if (mission02Val=="ChallengeMode"){
-            message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+hwMode+ "の" +homeWork+"で、"+ homeWorkContent + "」<br>";   
+            message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+hwMode+ "の" +homeWork+"で、"+ homeWorkContent + "」<br>";
         }
         else{
-            message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+hwMode+ "の" +homeWork+ "を、"+ homeWorkContent + "」<br>";   
+            message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+hwMode+ "で" + homeWork + "の" + chapters[homeWork]+ "を、"+ homeWorkContent + "」<br>";
         }
 
     //presentation
@@ -88,12 +90,12 @@ function submitHandler() {
         message += "<br>" + "---工夫やこだわり、難しかった点---" + "<br>" +　ingenuity + "<br>"
         message += "<br>" + "---発表の様子---" + "<br>" +　state_of_announcement + "<br>"
         if(homeWork=="クリエイトモード"){
-            message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+homeWork+"で、"+ homeWorkContent + "」<br>";   
+            message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+homeWork+"で、"+ homeWorkContent + "」<br>";
         }else if (mission02Val=="ChallengeMode"){
-            message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+hwMode+ "の" +homeWork+"で、"+ homeWorkContent + "」<br>";   
+            message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+hwMode+ "の" +homeWork+"で、"+ homeWorkContent + "」<br>";
         }
         else{
-            message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+hwMode+ "の" +homeWork+ "を、"+ homeWorkContent + "」<br>";   
+            message += "◇◇自宅学習目標◇◇" + "<br>" + "「"+hwMode+ "の" +homeWork+ "を、"+ homeWorkContent + "」<br>";
         }
     }
     message += "<br>";
