@@ -136,32 +136,6 @@ function submitHandler() {
   document.getElementById("result").innerHTML = message;
 }
 
-// ----------------------------------------------------------------------
-// let input = document.createElement('input');
-// input.setAttribute('type', 'checkbox');
-// input.setAttribute('id', 'kuro');
-// input.setAttribute('name', 'kuro');
-// input.setAttribute('value', '1');
-// let label = document.createElement('label');
-// label.htmlFor = 'kuro';
-// label.appendChild(document.createTextNode('ブロック'));
-// let divNode = document.getElementById("selectMode")
-// divNode.appendChild(input);
-// divNode.appendChild(label);
-
-// let input2 = document.createElement('input');
-// input2.setAttribute('type', 'checkbox');
-// input2.setAttribute('id', 'b');
-// input2.setAttribute('name', 'b');
-// input2.setAttribute('value', '2');
-// let label2 = document.createElement('label');
-// label2.htmlFor = 'b';
-// label2.appendChild(document.createTextNode('Pythonブロック'));
-// let divNode2 = document.getElementById("selectMode")
-// divNode2.appendChild(input2);
-// divNode2.appendChild(label2);
-// ----------------------------------------------------------------------
-
 function onClickCopy() {
   const pTag = document.getElementById("result");
   const range = document.createRange();
