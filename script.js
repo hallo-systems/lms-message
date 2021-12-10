@@ -97,13 +97,13 @@ function submitHandler() {
     message += "<br>";
     if (homeWork == "クリエイトモード") {
       message += "◇◇自宅学習目標◇◇<br>";
-      message += `「${homeWork}で、発表会へ向けてクリエイトを創作する<br>`;
+      message += `「${homeWork}で、発表会へ向けてクリエイトを創作する」<br>`;
     } else if (mission02Val == "ChallengeMode") {
       message += "◇◇自宅学習目標◇◇<br>";
       message += `「${hwMode}の${homeWork}で、${homeWorkContent}」<br>`;
     } else {
       message += "◇◇自宅学習目標◇◇<br>";
-      message += `「${hwMode}で${homeWork}の${chapters[homeWork]}を、${homeWorkContent}」<br>`;
+      message += `「${hwMode}で${homeWork}のステージを、${homeWorkContent}」<br>`;
     }
 
     //presentation
@@ -117,7 +117,7 @@ function submitHandler() {
     message += `${production_content}<br>`;
     message += "<br>---工夫やこだわり、難しかった点---<br>";
     message += `${ingenuity}<br>`;
-    message += "<br>---発表の様子---<br>"
+    message += "<br>---発表の様子---<br><br>"
     message += `${state_of_announcement}<br>`;
     if (homeWork == "クリエイトモード") {
       message += "◇◇自宅学習目標◇◇<br>";
