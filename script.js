@@ -79,7 +79,7 @@ function submitHandler() {
   if (todayLessonType == "normal") {
     message += `【 ${studentName} さんレッスンレポート】<br>`;
     message += "<br>";
-    if (chapter == "Create") {
+    if (chapter == "クリエイトモード") {
       message += "本日はクリエイトモードを中心に行いました。<br>";
       message += "<br>";
       message += `本日のレッスン目標は、「 ${mission} 」でした。<br>`;
