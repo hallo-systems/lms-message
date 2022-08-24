@@ -19,6 +19,7 @@ const chapters = {
   シュートを決めよう: "変数",
   暗号ロボットの挑戦状: "関数",
   タイルデザイナー見習い２: "関数",
+  おこづかいの使い道: "演算子",
   テストの合計点と平均点: "応用プログラミング",
   お釣りを求めよう: "応用プログラミング",
   三目並べ: "応用プログラミング",
@@ -34,7 +35,7 @@ const chapters = {
   "そのパスワードは安全？": "ネットワークとセキュリティ",
   パスワードを守ろう: "ネットワークとセキュリティ",
   "暗号化・復号": "ネットワークとセキュリティ",
-  手書き文字認識: "AIプログラミング"
+  手書き文字認識: "AIプログラミング",
 };
 
 let todayLessonType = "";
@@ -94,7 +95,7 @@ function submitHandler() {
       message += "<br>";
       message += `本日のレッスン目標は、「 ${mode}の${chapter}を${mission}」でした。<br>`;
     }
-    message += "<br>---タイピング---<br>"
+    message += "<br>---タイピング---<br>";
     message += `${typing}<br>`;
     message += "<br>---タイムアタック---<br>";
     message += `${timeattack}<br>`;
@@ -119,11 +120,11 @@ function submitHandler() {
     const pTitle = document.getElementById("title").value;
     message += "本日は、発表会を行いました<br>";
     message += `${pstudentName}さんは、[タイトル：${pTitle}]を発表してくれました。<br>`;
-    message += "<br>---作品内容---<br>"
+    message += "<br>---作品内容---<br>";
     message += `${production_content}<br>`;
     message += "<br>---工夫やこだわり、難しかった点---<br>";
     message += `${ingenuity}<br>`;
-    message += "<br>---発表の様子---<br><br>"
+    message += "<br>---発表の様子---<br><br>";
     message += `${state_of_announcement}<br>`;
     if (homeWork == "クリエイトモード") {
       message += "◇◇自宅学習目標◇◇<br>";
